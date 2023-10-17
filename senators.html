@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Senators</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <!--This will show the number of senators in each party-->
+            <div id="errors"></div>
+            <div id="parties">
+
+            </div>
+
+        </header>
+        <!--This will show the senators in leadership roles, sorted by party-->
+        <section id="leaders">
+
+        </section>
+        <!--This will show all senators based on filter criteria-->
+        <section id="senators">
+            <!--Here we have the dropdown select filters-->
+            <select id="partyFilter" onchange="filterTable()" class="filters">
+                <option value="">Party (Show All)</option>
+            </select>
+            <select id="stateFilter" onchange="filterTable()" class="filters">
+                <option value="">State (Show All)</option>
+            </select>
+            <select id="rankFilter" onchange="filterTable()" class="filters">
+                <option value="">Rank (Show All)</option>
+            </select>
+            <!--Table Shows senators based on filters-->
+            <table id="senatorTable">
+                <th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th>
+            </table>
+            <div id="noResults" style="display: none;">There are no results matching your search criteria</div>
+        </section>
+        <!--This will show the details of the senator when clicked
+        modified from https://www.w3schools.com/howto/howto_css_modals.asp-->
+        <div id="modal">
+            <div id="modal-content">
+            </div>
+        </div>
+        <script src="senators.js"></script>
+    </body>
+</html>
