@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>Senators</title>
         <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <header>
             <!--This will show the number of senators in each party-->
+            <img src="img/senate-background.jpg" >
             <div id="errors"></div>
             <div id="parties">
 
@@ -19,16 +22,19 @@
         </section>
         <!--This will show all senators based on filter criteria-->
         <section id="senators">
-            <!--Here we have the dropdown select filters-->
-            <select id="partyFilter" onchange="filterTable()" class="filters">
-                <option value="">Party (Show All)</option>
-            </select>
-            <select id="stateFilter" onchange="filterTable()" class="filters">
-                <option value="">State (Show All)</option>
-            </select>
-            <select id="rankFilter" onchange="filterTable()" class="filters">
-                <option value="">Rank (Show All)</option>
-            </select>
+            <div id="filterDiv">
+                <!--Here we have the dropdown select filters-->
+                <select id="partyFilter" onchange="filterTable()" class="filters">
+                    <option value="">Party (Show All)</option>
+                </select>
+                <select id="stateFilter" onchange="filterTable()" class="filters">
+                    <option value="">State (Show All)</option>
+                </select>
+                <select id="rankFilter" onchange="filterTable()" class="filters">
+                    <option value="">Rank (Show All)</option>
+                </select>
+                <input type="text"  id="searchFilter" oninput="filterTable()" placeholder="Search">
+            </div>
             <!--Table Shows senators based on filters-->
             <table id="senatorTable">
                 <th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th>
