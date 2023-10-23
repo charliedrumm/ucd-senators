@@ -1,3 +1,15 @@
+body {
+  font-family:  sans-serif;
+  margin: 0 ;
+  width: 100%;
+}
+
+img {
+  width: 30%;
+  margin: auto;
+  height: auto;
+  margin-left: 35%;
+}
 
 #modal {
     display: none; /* Hidden by default */
@@ -7,17 +19,133 @@
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    /*overflow: auto;  Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
 
   #modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 20px;
-    border: 1px solid #888;
-    border-radius: 5%;
+    border: 3px solid #000;
+    border-radius: 3%;
     width: 80%; /* Could be more or less, depending on screen size */
   }
+
+  #parties {
+    border-collapse: collapse;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .party-count {
+    flex: 1;
+    margin: 5px;
+    border: 1px solid #000;
+    border-radius: 5%;
+    
+    background-color: #BF0A30;
+  }
+
+  #leaders {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    /*
+    background-color: rgba(191,10,48,0.9);
+    background-color: rgba(0,40,104,0.9);*/
+  }
+
+  p span {
+    font-weight: 550;
+  }
+  #leaders h2{
+    font-weight: 900;
+  }
+
+
+
+#senators {
+  background-color: white;
+  
+}
+
+#filterDiv {
+  background-color: #f0f0f0;
+  border: 1px solid #002868;
+  border-radius: 4px;
+  padding: 5px;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+select, input {
+  font-size: 16px;
+  background-color: #fff; 
+  border: 2px solid #ccc; 
+  border-radius: 4px; 
+  padding: 10px;
+  margin: 5px;
+    
+}
+
+select:hover {
+  border-color: #002868; /* Border color on hover/focus */
+}
+input:hover {
+  border-color: #BF0A30; /* Border color on hover/focus */
+}
+
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.row:hover{
+  background-color:#f5f5f5;
+  cursor: pointer;
+}
+table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr{
+  border-bottom: 1px solid #ddd;
+}
+
+td{
+  padding: 10px;
+  text-align: center;
+}
+
+#noResults, #errors {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: red;
+  margin-bottom: 80px;
+}
+
+
+
 

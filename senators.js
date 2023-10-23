@@ -14,9 +14,10 @@ async function getSenators() {
                 'HTTP error status: ' + response.status
             );
         }
+        
         const data = await response.json();
         senators = data.objects;
-        console.log(data);
+        
         //map loops through the array and returns the party for each senator
         //new Set removes duplicates
         //... converts back to array
@@ -27,8 +28,6 @@ async function getSenators() {
         fillPartySelect();
         fillStateSelect();
         fillRankSelect();
-        
-
     }
     catch(error){
         document.getElementById("errors").textContent = error;
@@ -46,7 +45,7 @@ function partyCount(){
                 count++;
             }
         }
-        partyCount.innerHTML += "<div class='party-count' ><h2>" + uniqueParties[i] + "</h2><p>" + count + "</p></div>";
+        partyCount.innerHTML += "<div class='party-count' ><h2>" + uniqueParties[i] + "</h2><h1>" + count + "</h1></div>";
     }
 
 }
@@ -61,7 +60,7 @@ function getLeaders(){
             //console.log(senators[j].leadership_role != null);
             if(uniqueParties[i] === senators[j].party && senators[j].leadership_title != null){
                 count++;
-                leaders.innerHTML += "<p>" + senators[j].person.firstname + " " +  senators[j].person.lastname + " " + senators[j].leadership_title + "</p>";
+                leaders.innerHTML += "<p><span>" + senators[j].person.firstname + " " +  senators[j].person.lastname + "</span><br>" + senators[j].leadership_title + "</p>";
                 console.log(senators[j].person.lastname + " " + senators[j].leadership_title);
             }
         }
@@ -75,7 +74,7 @@ function senatorTable(){
     //This function fills the table with the senator data
     const table = document.getElementById("senatorTable");
     for(let i=0; i<senators.length; i++){
-        table.innerHTML += "<tr onclick='moreInfo("+i+")''><td>" + senators[i].person.firstname + " " + senators[i].person.lastname + "</td><td>" + senators[i].party + "</td><td>" + senators[i].state + "</td><td>"+ senators[i].person.gender + "</td><td>"+ senators[i].senator_rank_label + "</td></tr>";
+        table.innerHTML += "<tr onclick='moreInfo("+i+")'' class='row'><td>" + senators[i].person.firstname + " " + senators[i].person.lastname + "</td><td>" + senators[i].party + "</td><td>" + senators[i].state + "</td><td>"+ senators[i].person.gender.charAt(0).toUpperCase() + senators[i].person.gender.slice(1) + "</td><td>"+ senators[i].senator_rank_label + "</td></tr>";
     }
 }
 
@@ -121,15 +120,23 @@ function filterTable(){
     const partyFilter = document.getElementById("partyFilter").value.toUpperCase();
     const stateFilter = document.getElementById("stateFilter").value.toUpperCase();
     const rankFilter = document.getElementById("rankFilter").value.toUpperCase();
+    const searchFilter = document.getElementById("searchFilter").value.toUpperCase();
     let rows_hidden = 0;
     for(let i=1; i<table.rows.length; i++){
         let row = table.rows[i];
+        //This goes through each cell in the row and adds the text to a string so we can use the text search filter
+        let rowString = ""
+        for(let j=0; j<row.cells.length; j++){
+            rowString += row.cells[j].textContent.toUpperCase() + " ";
+        }
+        
         let party = row.cells[1].textContent.toUpperCase();
         let state = row.cells[2].textContent.toUpperCase();
         let rank = row.cells[4].textContent.toUpperCase();
         if((party === partyFilter || partyFilter === "")
         && (state === stateFilter || stateFilter === "")
-        && (rank === rankFilter || rankFilter === "")){
+        && (rank === rankFilter || rankFilter === "")
+        && (rowString.indexOf(searchFilter) > -1)){//search filter checks if search string is a substring of the row string
             row.style.display = "";
         }else{
             row.style.display = "none";
