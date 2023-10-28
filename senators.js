@@ -167,20 +167,20 @@ function moreInfo(i){
     //This function displays a modal with more info about the senator
     
     const modalContent = document.getElementById("modal-content");
-    modalContent.innerHTML = "<h1>" + senators[i].person.firstname + " " + senators[i].person.lastname + "</h1>";
-    let text = "<p>Party: " + senators[i].party + "</p>";
-    text += "<p>State: " + senators[i].state + "</p>";
-    text += "<p>Rank: " + senators[i].senator_rank_label + "</p>";
-    text += "<p>Office: " + senators[i].extra.office + "</p>";
-    text += "<p>Date of Birth: " + senators[i].person.birthday + "</p>";
-    text += "<p>Start Date: " + senators[i].startdate + "</p>";
+    modalContent.innerHTML = "<h1 class=person-name>" + senators[i].person.firstname + " " + senators[i].person.lastname + "</h1>";
+    let text = "<p><strong>Party:</strong> " + senators[i].party + "</p>";
+    text += "<p><strong>State:</strong> " + senators[i].state + "</p>";
+    text += "<p><strong>Rank:</strong> " + senators[i].senator_rank_label + "</p>";
+    text += "<p><strong>Office:</strong> " + senators[i].extra.office + "</p>";
+    text += "<p><strong>Date of Birth:</strong> " + senators[i].person.birthday + "</p>";
+    text += "<p><strong>Start Date:</strong> " + senators[i].startdate + "</p>";
     if(senators[i].person.twitterid != null){
-        text += "<p>Twitter: <a href='https://twitter.com/" + senators[i].person.twitterid + "' target='_blank'>" + senators[i].person.twitterid + "</a></p>";
+        text += "<p><strong>Twitter:</strong> <a href='https://twitter.com/" + senators[i].person.twitterid + "' target='_blank'>" + senators[i].person.twitterid + "</a></p>";
     }
     if(senators[i].person.youtubeid != null){
-        text += "<p>Youtube: <a href='https://www.youtube.com/user/" + senators[i].person.youtubeid + "' target='_blank'>" + senators[i].person.youtubeid + "</a></p>";
+        text += "<p><strong>Youtube:</strong> <a href='https://www.youtube.com/user/" + senators[i].person.youtubeid + "' target='_blank'>" + senators[i].person.youtubeid + "</a></p>";
     }
-    text += "<p>Website: <a href='" + senators[i].website + "' target='_blank'>" + senators[i].website + "</a></p>";
+    text += "<p><strong>Website:</strong> <a href='" + senators[i].website + "' target='_blank'>" + senators[i].website + "</a></p>";
     modalContent.innerHTML += text;
     document.getElementById("modal").style.display = "block";
 }
