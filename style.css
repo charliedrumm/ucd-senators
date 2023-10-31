@@ -81,6 +81,7 @@ body {
     text-align: center;
     padding-left: 10%;
     padding-right: 10%;
+    color: white;
   }
 
   .party-count {
@@ -116,9 +117,6 @@ body {
     font-size: 35px;
   }
 
-#senatorTable {
-
-}
 
 #senators {
   background-color: white;
