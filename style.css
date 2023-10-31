@@ -111,11 +111,12 @@ body {
 
   p {
     color: rgba(5, 52, 93, 0.789);
+    font-size: 18px;
   }
 
   span {
-    font-size: large;
     color: #000;
+    font-size: 20px;
   }
 
   p span {
