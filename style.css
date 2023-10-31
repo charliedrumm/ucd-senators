@@ -65,6 +65,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
+    font-size: large;
   }
 
   .person-name {
@@ -106,12 +107,21 @@ body {
     background-color: #e2ebf6;    
     /* background-color: rgba(51, 105, 190, 0.9);  */
     background-image: linear-gradient(rgba(209, 208, 208, 0.869),rgba(216, 216, 216, 0.915)), url(./img/senate-background.webp);
-    
+  }
+
+  p {
+    color: rgba(5, 52, 93, 0.789);
+  }
+
+  span {
+    font-size: large;
+    color: #000;
   }
 
   p span {
-    font-weight: 550;
+    font-weight: 600;
   }
+  
   #leaders h2{
     font-weight: 900;
     font-size: 35px;
@@ -141,13 +151,13 @@ select, input {
   border: 2px solid #ccc; 
   border-radius: 4px; 
   padding: 10px;
-  margin: 5px;
-    
+  margin: 5px; 
 }
 
 select:hover {
   border-color: #002868; /* Border color on hover/focus */
 }
+
 input:hover {
   border-color: #BF0A30; /* Border color on hover/focus */
 }
@@ -157,7 +167,6 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 30px;
-  
 }
 
 .row:hover{
