@@ -1,6 +1,6 @@
 body {
   font-family:  sans-serif;
-  margin: 0 ;
+  margin: 0;
   width: 100%;
   background-color: white;
 }
@@ -15,7 +15,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size:cover;  /* fits image to full screen width */
-  /* background-size: contain; */
   background-clip: padding-box;
 }
 
@@ -44,7 +43,6 @@ body {
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /*Full height*/
-    /*overflow: auto;  Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
@@ -99,13 +97,11 @@ body {
     padding-right: 10%;
     text-align: center;
     border-collapse: collapse;
-   
     padding: 1%;
     margin: 40px auto;
     border: 1px solid #000;
     border-radius: 3%;
     background-color: #e2ebf6;    
-    /* background-color: rgba(51, 105, 190, 0.9);  */
     background-image: linear-gradient(rgba(209, 208, 208, 0.869),rgba(216, 216, 216, 0.915)), url(./img/senate-background.webp);
   }
 
@@ -128,10 +124,8 @@ body {
     font-size: 35px;
   }
 
-
 #senators {
   background-color: white;
-  
 }
 
 #filterDiv {
@@ -163,18 +157,18 @@ input:hover {
   border-color: #BF0A30; /* Border color on hover/focus */
 }
 
-
 table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .row:hover{
   background-color:#f5f5f5;
   cursor: pointer;
 }
+
 table tr:nth-child(odd) {
   background-color: #fff;
 }
@@ -197,6 +191,7 @@ td{
     padding-left: 0%;
     padding-right: 0%;
   }
+
   .person-name {
     font-size: medium;
   }
@@ -204,6 +199,7 @@ td{
   p {
     font-size: small;
   }
+
 }
 
 #noResults, #errors {
