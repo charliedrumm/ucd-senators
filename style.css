@@ -191,6 +191,13 @@ td{
   text-align: center;
 }
 
+@media only screen and (max-width: 600px) {
+  td {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+}
+
 #noResults, #errors {
   text-align: center;
   font-size: 20px;
