@@ -57,11 +57,9 @@ function getLeaders(){
         let count = 0;
         leaders.innerHTML += "<h2>" + uniqueParties[i] + "</h2>";
         for(let j=0; j<senators.length; j++){
-            //console.log(senators[j].leadership_role != null);
             if(uniqueParties[i] === senators[j].party && senators[j].leadership_title != null){
                 count++;
                 leaders.innerHTML += "<p><span>" + senators[j].person.firstname + " " +  senators[j].person.lastname + "</span><br>" + senators[j].leadership_title + "</p>";
-                console.log(senators[j].person.lastname + " " + senators[j].leadership_title);
             }
         }
         if(count === 0){
@@ -69,13 +67,15 @@ function getLeaders(){
         }
     }
 }
-//TO DO Make the table rows clickable
+
 function senatorTable(){
     //This function fills the table with the senator data
     const table = document.getElementById("senatorTable");
+    table.innerHTML += "<tbody>"
     for(let i=0; i<senators.length; i++){
-        table.innerHTML += "<tr onclick='moreInfo("+i+")'' class='row'><td>" + senators[i].person.firstname + " " + senators[i].person.lastname + "</td><td>" + senators[i].party + "</td><td>" + senators[i].state + "</td><td>"+ senators[i].person.gender.charAt(0).toUpperCase() + senators[i].person.gender.slice(1) + "</td><td>"+ senators[i].senator_rank_label + "</td></tr>";
+        table.innerHTML += "<tr onclick='moreInfo("+i+")' class='row'><td>" + senators[i].person.firstname + " " + senators[i].person.lastname + "</td><td>" + senators[i].party + "</td><td>" + senators[i].state + "</td><td>"+ senators[i].person.gender.charAt(0).toUpperCase() + senators[i].person.gender.slice(1) + "</td><td>"+ senators[i].senator_rank_label + "</td></tr>";
     }
+    table.innerHTML += "</tbody>"
 }
 
 function fillPartySelect(){
@@ -148,13 +148,7 @@ function filterTable(){
         party = "REPUBLICAN"
         partyFilter = "REPUBLICAN"
         indexOf returns 0 because REPUBLICAN is in REPUBLICAN
-        
-        if(party.indexOf(partyFilter) > -1 && state.indexOf(stateFilter) > -1 && rank.indexOf(rankFilter) > -1){
-            row.style.display = "";
-        }else{
-            row.style.display = "none";
-            rows_hidden++;
-        }*/
+        */
     }
     if(rows_hidden === table.rows.length - 1){
         document.getElementById("noResults").style.display = "";
@@ -191,7 +185,7 @@ window.onclick = function(event) {
     if (event.target == modal) {
         document.getElementById("modal").style.display = "none";
     }
-  }
+  };
 
 
 getSenators();
