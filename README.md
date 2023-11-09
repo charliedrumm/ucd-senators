@@ -1,4 +1,4 @@
-# UCD COMP30680 - Assignment 1 by Charlie Drumm and David Woods
+# UCD COMP30680 - Assignment 2 by Charlie Drumm and David Woods
 
 This webpage displays data on US Senators from a JSON file, using Javascript, HTML, and CSS.
 
